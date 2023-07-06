@@ -2,7 +2,6 @@ package com.example.praticetodo.config;
 
 import java.util.List;
 
-
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -20,7 +19,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 @Configuration //꼭 알려줘야함
 @EnableWebMvc // 여기서 mvc 실행될거임
-@ComponentScan("com.example.todomvc.controller") //com.example.todomvc.controller 로 좁힐 수 있음. 왜냐면 이미 ioc 애들은 스캔해놧음
+@ComponentScan("com.example.practicctodo.controller") //com.example.todomvc.controller 로 좁힐 수 있음. 왜냐면 이미 ioc 애들은 스캔해놧음
 public class MvcConfig implements WebMvcConfigurer {
 	
 	
