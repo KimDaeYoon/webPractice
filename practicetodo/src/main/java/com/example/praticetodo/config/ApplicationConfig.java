@@ -11,7 +11,7 @@ import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
-@ComponentScan(basePackages = {"com.example.todomvc.dao", "com.example.todomvc.service"})
+@ComponentScan(basePackages = {"com.example.practicctodo.dao", "com.example.practicctodo.service"})
 public class ApplicationConfig {
 	@Bean
 	public DataSource dataSource() {
@@ -22,15 +22,5 @@ public class ApplicationConfig {
 		dataSource.setPassword("");
 		
 		return dataSource;		
-	}
-	
-	@Bean
-	public JdbcTemplate jdbcTemplate(DataSource dataSource) {
-		return new JdbcTemplate(dataSource);
-	}
-	
-	@Bean
-	public PlatformTransactionManager transactionManager(DataSource dataSource) {
-		return new DataSourceTransactionManager(dataSource);
 	}
 }
