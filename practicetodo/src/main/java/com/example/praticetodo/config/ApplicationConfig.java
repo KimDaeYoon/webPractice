@@ -11,7 +11,7 @@ import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
-@ComponentScan(basePackages = {"com.example.practicctodo.dao", "com.example.practicctodo.service"})
+@ComponentScan(basePackages = {"com.example.practicetodo.dao", "com.example.practicetodo.service"})
 public class ApplicationConfig {
 	@Bean
 	public DataSource dataSource() {
@@ -23,4 +23,5 @@ public class ApplicationConfig {
 		
 		return dataSource;		
 	}
+
 }
