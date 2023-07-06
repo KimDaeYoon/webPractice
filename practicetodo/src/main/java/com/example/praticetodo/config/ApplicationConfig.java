@@ -16,7 +16,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
-@ComponentScan(basePackages = {"com.example.practicetodo.dao", "com.example.practicetodo.service"})
+@ComponentScan(basePackages = {"com.example.praticetodo.dao", "com.example.praticetodo.service"})
 public class ApplicationConfig {
 	@Bean
 	public DataSource dataSource() {
@@ -40,7 +40,7 @@ public class ApplicationConfig {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory(final DataSource dataSource) {
 		final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(dataSource);
-		em.setPackagesToScan(new String[] { "com.example.practicetodo" }); //jpa 어떤 패키지 쓸꺼야?
+		em.setPackagesToScan(new String[] { "com.example.praticetodo" }); //jpa 어떤 패키지 쓸꺼야?
 
 		final HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter(); //실제 구현체가 하이버네이트라서
 		em.setJpaVendorAdapter(vendorAdapter);

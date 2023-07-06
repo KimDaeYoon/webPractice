@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 @Configuration //꼭 알려줘야함
 @EnableWebMvc // 여기서 mvc 실행될거임
-@ComponentScan("com.example.practicetodo.controller") //com.example.todomvc.controller 로 좁힐 수 있음. 왜냐면 이미 ioc 애들은 스캔해놧음
+@ComponentScan("com.example.praticetodo.controller") //com.example.todomvc.controller 로 좁힐 수 있음. 왜냐면 이미 ioc 애들은 스캔해놧음
 public class MvcConfig implements WebMvcConfigurer {
 	
 	
