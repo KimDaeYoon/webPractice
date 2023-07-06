@@ -18,6 +18,6 @@ doc/*.txt
 # ignore all .pdf files in the doc/ directory
 doc/**/*.pdf
 
-target/*
+target/
 .settings
 .classpath
