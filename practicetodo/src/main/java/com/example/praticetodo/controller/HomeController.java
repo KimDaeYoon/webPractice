@@ -1,4 +1,4 @@
-package com.example.praticetodo;
+package com.example.praticetodo.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
