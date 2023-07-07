@@ -18,32 +18,33 @@ public class TodoJpaRun {
 		ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 		
 		TodoRepository todoRepository = context.getBean(TodoRepository.class);
+		TodoService todoService = context.getBean(TodoService.class);
 		
 		// C : save
 		Todo todo = new Todo();
 		todo.setTodo("jpa study");
 		
 		System.out.println(todo);
-		todo = todoRepository.save(todo);
+		todo = todoService.addTodo(todo.getTodo());
 		System.out.println(todo);
 		
 		// R : read
 		
-		todoRepository.findById(9L);
-		
-		List<Todo> list = new ArrayList();
-		list = todoRepository.findAll();
-	
-		for (Todo todo2 : list) {
-			System.out.println(todo2);
-		}
+//		todoRepository.findById(9L);
+//		
+//		List<Todo> list = new ArrayList();
+//		list = todoRepository.findAll();
+//	
+//		for (Todo todo2 : list) {
+//			System.out.println(todo2);
+//		}
 		
 		// pageable 가능
 		
 		
 		// U : update
-		TodoService todoService = context.getBean(TodoService.class);
-		todoService.updateTodo(9L);
+	
+//		todoService.updateTodo(9L);
 		
 		// D : delete
 		
