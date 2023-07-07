@@ -1,10 +1,16 @@
 package com.example.praticetodo;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.example.praticetodo.config.ApplicationConfig;
+import com.example.praticetodo.domain.Todo;
 import com.example.praticetodo.repository.TodoRepository;
+import com.example.praticetodo.service.TodoService;
 
 public class TodoJpaRun {
 
@@ -12,6 +18,38 @@ public class TodoJpaRun {
 		ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 		
 		TodoRepository todoRepository = context.getBean(TodoRepository.class);
+		
+		// C : save
+		Todo todo = new Todo();
+		todo.setTodo("jpa study");
+		
+		System.out.println(todo);
+		todo = todoRepository.save(todo);
+		System.out.println(todo);
+		
+		// R : read
+		
+		todoRepository.findById(8L);
+		
+		List<Todo> list = new ArrayList();
+		list = todoRepository.findAll();
+	
+		for (Todo todo2 : list) {
+			System.out.println(todo2);
+		}
+		
+		// pageable 가능
+		
+		
+		// U : update
+		TodoService todoService = context.getBean(TodoService.class);
+		todoService.updateTodo(8L);
+		
+		// D : delete
+		
+		todoService.deleteTodo(8L);
+		
+		
 	}
 
 }

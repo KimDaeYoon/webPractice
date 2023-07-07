@@ -15,10 +15,12 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @ComponentScan(basePackages = {"com.example.praticetodo.service"})
-@EnableJpaRepositories(basePackages = "com.example.praticetodo.repository")
+@EnableJpaRepositories(basePackages = "com.example.praticetodo.repository") // jpa에 repository 알려줘야함
+@EnableTransactionManagement 
 public class ApplicationConfig {
 	@Bean
 	public DataSource dataSource() {
