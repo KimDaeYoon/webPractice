@@ -29,7 +29,7 @@ public class TodoJpaRun {
 		
 		// R : read
 		
-		todoRepository.findById(8L);
+		todoRepository.findById(9L);
 		
 		List<Todo> list = new ArrayList();
 		list = todoRepository.findAll();
@@ -43,11 +43,11 @@ public class TodoJpaRun {
 		
 		// U : update
 		TodoService todoService = context.getBean(TodoService.class);
-		todoService.updateTodo(8L);
+		todoService.updateTodo(9L);
 		
 		// D : delete
 		
-		todoService.deleteTodo(8L);
+//		todoService.deleteTodo(8L);
 		
 		
 	}
