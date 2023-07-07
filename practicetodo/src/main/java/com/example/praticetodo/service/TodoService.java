@@ -1,5 +1,6 @@
 package com.example.praticetodo.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -15,6 +16,28 @@ public class TodoService {
 
 	public TodoService(TodoRepository todoRepository) {
 		this.todoRepository = todoRepository;
+	}
+	
+
+	@Transactional(readOnly = true)
+	public List<Todo> getTodos() {
+
+//		return todoDao.getTodos();
+		return todoRepository.findAll();
+	}
+
+	@Transactional(readOnly = true)
+	public Todo getTodo(Long id) {
+
+//		return todoDao.getTodo(id);
+		return todoRepository.getById(id);
+	}
+
+	@Transactional
+	public Todo addTodo(String todo) {
+
+//		return todoDao.addTodo(todo);
+		return todoRepository.save(new Todo(1L, todo, false));
 	}
 
 	@Transactional // for performance
